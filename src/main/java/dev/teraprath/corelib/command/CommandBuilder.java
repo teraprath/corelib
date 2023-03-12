@@ -1,13 +1,18 @@
 package dev.teraprath.corelib.command;
 
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
-public abstract class CommandBuilder implements CommandExecutor {
+public abstract class CommandBuilder implements CommandExecutor, TabCompleter {
 
     protected CommandSender sender;
     protected String globalPermission;
@@ -41,6 +46,22 @@ public abstract class CommandBuilder implements CommandExecutor {
         handle();
         return false;
 
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+
+        ArrayList<String> list = new ArrayList<>();
+        String current = args[args.length - 1].toLowerCase();
+
+        for (int i = 0; i < this.possibleArgs.size(); i++) {
+            if (args.length == i) {
+                list.addAll(Arrays.asList(this.possibleArgs.get(i)));
+            }
+        }
+
+        list.removeIf(s -> !s.toLowerCase().startsWith(current));
+        return list;
     }
 
     public void setPermissionMessage(String permissionMessage) {
