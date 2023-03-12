@@ -1,19 +1,6 @@
+# corelib
 [![](https://jitpack.io/v/teraprath/corelib.svg)](https://jitpack.io/#teraprath/corelib)
 
-****
-
-Gradle
-
-````groovy
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-````
-````
-dependencies {
-    implementation 'com.github.HttpMarco:Aeon:VERSION'
-}
-````
 ****
 
 Maven
@@ -33,4 +20,19 @@ Maven
     <artifactId>corelib</artifactId>
     <version>VERSION</version>
 </dependency>
+````
+
+****
+
+Gradle
+
+````groovy
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+````
+````
+dependencies {
+    implementation 'com.github.HttpMarco:Aeon:VERSION'
+}
 ````
