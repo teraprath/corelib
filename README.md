@@ -1,4 +1,3 @@
-# corelib
 [![](https://jitpack.io/v/teraprath/corelib.svg)](https://jitpack.io/#teraprath/corelib)
 
 ****
