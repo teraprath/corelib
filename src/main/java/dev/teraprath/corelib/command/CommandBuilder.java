@@ -80,7 +80,7 @@ public abstract class CommandBuilder implements CommandExecutor, TabCompleter {
         return this.noPlayerMessage;
     }
 
-    public void setPossibleArgs(int index, String[] args) {
+    public void setPossibleArgs(int index, String... args) {
         this.possibleArgs.put(index, args);
     }
 
