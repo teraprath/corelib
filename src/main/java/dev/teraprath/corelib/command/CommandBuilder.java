@@ -1,6 +1,5 @@
 package dev.teraprath.corelib.command;
 
-import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -109,7 +108,6 @@ public abstract class CommandBuilder implements CommandExecutor, TabCompleter {
     }
 
     public abstract void handle();
-
 
 
 }

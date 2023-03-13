@@ -27,11 +27,11 @@ public class PlayerManager {
         return this;
     }
 
-    public void addPlayer(@Nonnull Player player) {
+    public void createPlayer(@Nonnull Player player) {
         this.players.put(player.getUniqueId(), new PlayerInfo(player, defaults));
     }
 
-    public void removePlayer(@Nonnull Player player) {
+    public void deletePlayer(@Nonnull Player player) {
         this.players.remove(player.getUniqueId());
     }
 
@@ -39,7 +39,7 @@ public class PlayerManager {
         return this.players;
     }
 
-    public PlayerInfo getPlayerByUUID(@Nonnull String uuid) {
+    public PlayerInfo getPlayerByUUID(@Nonnull UUID uuid) {
         return this.players.get(uuid);
     }
 
