@@ -24,6 +24,7 @@ public abstract class CommandBuilder implements CommandExecutor, TabCompleter {
     public CommandBuilder(String globalPermission, boolean playerOnly) {
         this.globalPermission = globalPermission;
         this.playerOnly = playerOnly;
+        this.possibleArgs = new HashMap<>();
     }
 
     @Override
