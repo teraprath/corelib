@@ -32,6 +32,6 @@ repositories {
 ````
 ````
 dependencies {
-    implementation 'com.github.HttpMarco:Aeon:VERSION'
+    implementation 'com.github.teraprath:corelib:VERSION'
 }
 ````
