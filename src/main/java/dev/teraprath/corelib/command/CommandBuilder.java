@@ -109,5 +109,8 @@ public abstract class CommandBuilder implements CommandExecutor, TabCompleter {
 
     public abstract void handle();
 
+    public CommandExecutor register() {
+        return this;
+    }
 
 }
