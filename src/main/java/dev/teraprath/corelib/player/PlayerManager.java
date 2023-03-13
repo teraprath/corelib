@@ -2,7 +2,6 @@ package dev.teraprath.corelib.player;
 
 
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nonnull;
 import java.util.HashMap;
@@ -11,15 +10,12 @@ import java.util.UUID;
 
 public class PlayerManager {
 
-    private final JavaPlugin plugin;
     private final Map<UUID, PlayerInfo> players;
     private final Map<String, Object> defaults;
 
-    public PlayerManager(@Nonnull JavaPlugin plugin) {
-        this.plugin = plugin;
+    public PlayerManager() {
         this.players = new HashMap<>();
         this.defaults = new HashMap<>();
-        plugin.getServer().getPluginManager().registerEvents(new PlayerListener(this), plugin);
     }
 
     public PlayerManager addDefaults(String key, Object value) {
