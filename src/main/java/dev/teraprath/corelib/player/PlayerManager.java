@@ -18,7 +18,7 @@ public class PlayerManager {
         this.defaults = new HashMap<>();
     }
 
-    public PlayerManager addDefaults(String key, Object value) {
+    public PlayerManager addDefault(String key, Object value) {
         this.defaults.put(key, value);
         return this;
     }
@@ -31,11 +31,11 @@ public class PlayerManager {
         this.players.remove(player.getUniqueId());
     }
 
-    public Map<UUID, PlayerInfo> getPlayers() {
+    public Map<UUID, PlayerInfo> getOnlinePlayers() {
         return this.players;
     }
 
-    public PlayerInfo getPlayerByUUID(@Nonnull UUID uuid) {
+    public PlayerInfo getPlayer(@Nonnull UUID uuid) {
         return this.players.get(uuid);
     }
 

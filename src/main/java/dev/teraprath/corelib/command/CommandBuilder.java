@@ -13,13 +13,13 @@ import java.util.List;
 
 public abstract class CommandBuilder implements CommandExecutor, TabCompleter {
 
-    protected CommandSender sender;
-    protected String globalPermission;
+    protected final String globalPermission;
+    protected final boolean playerOnly;
     protected HashMap<Integer, String[]> possibleArgs;
-    protected boolean playerOnly;
-    protected String[] args;
     protected String permissionMessage = "You cannot do that!";
     protected String noPlayerMessage = "You're not a player!";
+    private String[] args;
+    private CommandSender sender;
 
     public CommandBuilder(String globalPermission, boolean playerOnly) {
         this.globalPermission = globalPermission;

@@ -13,7 +13,7 @@ public class SQLAdapter {
 
     public void connect() {
         try {
-            this.con = DriverManager.getConnection("jdbc:mysql://" + authentication.getHost() + ":" + authentication.getPort() + "/" + authentication.getDatabase() + "?autoReconnect=true", authentication.getUser(), authentication.getPassword());
+            this.con = DriverManager.getConnection("jdbc:mysql://" + authentication.host() + ":" + authentication.port() + "/" + authentication.database() + "?autoReconnect=true", authentication.user(), authentication.password());
         } catch (SQLException e) {
             e.printStackTrace();
         }
