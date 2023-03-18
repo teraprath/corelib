@@ -13,13 +13,13 @@ import java.util.List;
 
 public abstract class CommandBuilder implements CommandExecutor, TabCompleter {
 
-    protected final String globalPermission;
-    protected final boolean playerOnly;
+    protected String globalPermission;
+    protected boolean playerOnly;
     protected HashMap<Integer, String[]> possibleArgs;
     protected String permissionMessage = "You cannot do that!";
     protected String noPlayerMessage = "You're not a player!";
-    private String[] args;
-    private CommandSender sender;
+    protected String[] args;
+    protected CommandSender sender;
 
     public CommandBuilder(String globalPermission, boolean playerOnly) {
         this.globalPermission = globalPermission;
@@ -54,10 +54,9 @@ public abstract class CommandBuilder implements CommandExecutor, TabCompleter {
         ArrayList<String> list = new ArrayList<>();
         String current = args[args.length - 1].toLowerCase();
 
-        for (int i = 0; i < this.possibleArgs.size(); i++) {
-            if (args.length == i) {
-                list.addAll(Arrays.asList(this.possibleArgs.get(i)));
-            }
+        if (args.length <= possibleArgs.size()) {
+            String[] possible = possibleArgs.get(args.length);
+            list.addAll(Arrays.asList(possible));
         }
 
         list.removeIf(s -> !s.toLowerCase().startsWith(current));
