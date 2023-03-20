@@ -6,7 +6,7 @@
 
     <groupId>dev.teraprath</groupId>
     <artifactId>corelib</artifactId>
-    <version>1.6.7-SNAPSHOT</version>
+    <version>1.6.8-STABLE</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
