@@ -17,7 +17,7 @@ Maven
 <dependency>
     <groupId>com.github.teraprath</groupId>
     <artifactId>corelib</artifactId>
-    <version>VERSION</version>
+    <version>1.6.8-STABLE</version>
 </dependency>
 ````
 
@@ -32,6 +32,6 @@ repositories {
 ````
 ````
 dependencies {
-    implementation 'com.github.teraprath:corelib:VERSION'
+    implementation 'com.github.teraprath:corelib:1.6.8-STABLE'
 }
 ````
